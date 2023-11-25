@@ -17,7 +17,6 @@ const UsersState = {
 };
 app.get("/", async (req, res) => {
 	const sockets = await io.fetchSockets();
-	console.log(sockets[0].id);
 	res.json({ message: "connected" });
 });
 io.on("connection", (socket) => {
