@@ -9,6 +9,7 @@ const io = new Server(httpServer, {
 		origin: process.env.ORIGIN_URL,
 	},
 });
+const PORT = process.env.PORT || 4000;
 const UsersState = {
 	users: [],
 	setUsers: function (newUsersArray) {
@@ -52,6 +53,6 @@ io.on("connection", (socket) => {
 		console.log(`${socket.id} disconnected`);
 	});
 });
-httpServer.listen(4000, () => {
-	console.log("listening on *:4000");
+httpServer.listen(PORT, () => {
+	console.log(`listening on port ${PORT}`);
 });
