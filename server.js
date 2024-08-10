@@ -6,7 +6,7 @@ const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
 	cors: {
-		origin: "https://pix-next.vercel.app",
+		origin: "http://localhost:3000",
 	},
 });
 const PORT = process.env.PORT || 4000;
